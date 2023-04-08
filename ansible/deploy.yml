@@ -7,58 +7,60 @@
   tasks:
     - name: Create/Update ACM Cloudformation stack
       amazon.aws.cloudformation:
-        stack_name: '{{ acm_stack_name }}'
-        state: 'present'
-        region: 'us-east-1'
+        stack_name: "{{ acm_stack_name }}"
+        state: "present"
+        region: "us-east-1"
         disable_rollback: false
-        template: '../cloudformation/acm.yml'
+        template: "../cloudformation/acm.yml"
         template_parameters:
-          DomainName: '{{ domain_name }}'
+          DomainName: "{{ domain_name }}"
         tags:
-          Stack: '{{ acm_stack_name }}'
-          Stage: '{{ stage }}'
-          Tenant: '{{ tenant }}'
+          Stack: "{{ acm_stack_name }}"
+          Stage: "{{ stage }}"
+          Tenant: "{{ tenant }}"
 
     - name: Retrieve acm certificate arn
       amazon.aws.cloudformation_info:
-        stack_name: '{{ acm_stack_name }}'
-        aws_region: 'us-east-1'
+        stack_name: "{{ acm_stack_name }}"
+        aws_region: "us-east-1"
       register: acm_info
 
     - debug:
-        msg: '{{ acm_info }}'
+        msg: "{{ acm_info }}"
 
     - name: Create/Update Application Cloudformation stack
       amazon.aws.cloudformation:
-        stack_name: '{{ application_stack_name }}'
-        state: 'present'
-        region: '{{ aws_region }}'
+        stack_name: "{{ application_stack_name }}"
+        state: "present"
+        region: "{{ aws_region }}"
         disable_rollback: false
-        template: '../cloudformation/application.yml'
+        template: "../cloudformation/application.yml"
         template_parameters:
-          Tenant: '{{ tenant }}'
-          HostedZoneId: '{{ hosted_zone_id }}'
-          DomainName: '{{ domain_name }}'
-          Stage: '{{ stage }}'
-          FrontendCertificate: '{{ acm_info.cloudformation[acm_stack_name].stack_outputs.FrontendCertificateArn }}'
+          Tenant: "{{ tenant }}"
+          HostedZoneId: "{{ hosted_zone_id }}"
+          DomainName: "{{ domain_name }}"
+          Stage: "{{ stage }}"
+          FrontendCertificate: "{{ acm_info.cloudformation[acm_stack_name].stack_outputs.FrontendCertificateArn }}"
         tags:
-          Stack: '{{ application_stack_name }}'
-          Stage: '{{ stage }}'
-          Tenant: '{{ tenant }}'
+          Stack: "{{ application_stack_name }}"
+          Stage: "{{ stage }}"
+          Tenant: "{{ tenant }}"
 
     - name: copy local files to S3
-      ansible.builtin.shell: aws s3 cp ./index.html s3://{{ s3_bucket_name }}
+      ansible.builtin.shell: |
+        aws s3 cp ./index.html s3://{{ s3_bucket_name }}
+        aws s3 sync ./assets s3://{{ s3_bucket_name }}/assets
       args:
         chdir: ../
 
     - name: Retrieve Cloudfront distribution id
       amazon.aws.cloudformation_info:
-        stack_name: '{{ application_stack_name }}'
-        aws_region: '{{ aws_region }}'
+        stack_name: "{{ application_stack_name }}"
+        aws_region: "{{ aws_region }}"
       register: cfn_info
 
     - debug:
-        msg: '{{ cfn_info }}'
+        msg: "{{ cfn_info }}"
 
     - name: Invalidate Cloudformation cache
       ansible.builtin.shell: |

@@ -44,6 +44,7 @@ This is my portfolio: [yetanothertool.com](https://yetanothertool.com)
 ### Deployment
 
 ```bash
+export AWS_PROFILE="studiowebux"
 make deploy
 ```
 
