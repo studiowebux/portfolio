@@ -48,6 +48,12 @@ export AWS_PROFILE="studiowebux"
 make deploy
 ```
 
+### Docker
+
+```bash
+docker compose up -d
+```
+
 ## Contributing
 
 1. Create a Feature Branch
@@ -64,7 +70,7 @@ make deploy
 git checkout -b <feature|fix|release|chore|hotfix>/prefix-name
 ```
 
-> Your branch name must starts with [feature|fix|release|chore|hotfix] and use a / before the name; 
+> Your branch name must starts with [feature|fix|release|chore|hotfix] and use a / before the name;
 > Use hyphens as separator;
 > The prefix correspond to your Kanban tool id (e.g. abc-123)
 
