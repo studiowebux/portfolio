@@ -7,7 +7,7 @@ services:
       - ./www/:/usr/share/nginx/html:ro
     environment:
       - VIRTUAL_HOST=yetanothertool.com
-      - VIRTUAL_PORT=8888
+      - VIRTUAL_PORT=80
       - LETSENCRYPT_HOST=yetanothertool.com
     networks:
       - proxy
