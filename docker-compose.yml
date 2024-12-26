@@ -13,6 +13,11 @@ services:
       - proxy
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "25M"
 
 networks:
   proxy:
