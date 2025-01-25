@@ -8,7 +8,7 @@
   <meta name="author" content="Studio Webux" />
   <title>Yet another Tool</title>
 
-  <link rel="canonical" href="http://localhost:8080/" />
+  <link rel="canonical" href="/" />
 
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
@@ -63,6 +63,29 @@
       </header>
 
 
+      <div class="p-4 mb-3 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">
+              Lucid Adventure (WIP)
+          </h1>
+          <p class="col-md-8 fs-4">
+            A Text Based RPG built with Deno. The backend is using Deno/Hono, the frontend is a Deno CLI binary and a Flutter Application (Still WIP)
+          </p>
+          <div class="d-flex">
+            <span class="badge text-bg-dark me-1">#deno</span>
+            <span class="badge text-bg-dark me-1">#hono</span>
+            <span class="badge text-bg-dark me-1">#typescript</span>
+            <span class="badge text-bg-dark me-1">#dart</span>
+            <span class="badge text-bg-dark me-1">#flutter</span>
+            <span class="badge text-bg-dark me-1">#cli</span>
+          </div>
+          <div class="d-flex flex-row-reverse">
+              <a href="https://lucidadventure.com" target="_blank"><i class="me-3 fs-1 text-dark fa fa-solid fa-earth"></i></a>
+              <a href="https://github.com/studiowebux/lucid-adventure-client" target="_blank"><i class="me-3 fs-1 text-dark fa fa-solid fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
 
       <div class="p-4 mb-3 bg-light rounded-3">
         <div class="container-fluid py-5">
@@ -89,7 +112,7 @@
                 Ledger
             </h1>
             <p class="col-md-8 fs-4">
-            A typescript experiment to build a ledger for learning purposes, a bit inspired on the UTXO model
+            A typescript experiment to build a ledger for learning purposes, a bit inspired on the UTXO model. Using Kafka to process the transactions.
             </p>
             <div class="d-flex">
             <span class="badge text-bg-dark me-1">#deno</span>
@@ -111,7 +134,7 @@
             PetiteDB
         </h1>
         <p class="col-md-8 fs-4">
-            A Deno In-memory with persistance local JSON database
+            A Deno In-memory with persistance local JSON database. Useful for local development and testing. A quick way to get a key-value database in typescript.
         </p>
         <div class="d-flex">
             <span class="badge text-bg-dark me-1">#deno</span>
@@ -119,6 +142,7 @@
             <span class="badge text-bg-dark me-1">#database</span>
         </div>
         <div class="d-flex flex-row-reverse">
+            <a class="jsr" href="https://jsr.io/@studiowebux/petitedb" target="_blank"><img src="https://jsr.io/badges/@studiowebux/petitedb" alt="JSR"/></a>
             <a href="https://github.com/studiowebux/petitedb" target="_blank"><i class="me-3 fs-1 text-dark fa fa-solid fa-github"></i></a>
         </div>
     </div
@@ -129,9 +153,9 @@
               Le Robot minigame
           </h1>
           <p class="col-md-8 fs-4">
-            A chatGPTgenerated Deno / Hono backend with petitedb and a frontend using HTMX/HTML5/CSS/JS.
+            A chatGPT generated Deno / Hono backend using @studiowebux/petitedb and a frontend using HTMX/HTML5/CSS/JS.
             Try to keep your robot alive and happy !
-            <i>The "game" is fully GPT made, trying to get better at writting AI requirements.</i>
+            <i>The "game" is fully GPT made, trying to get better at writting AI requirements and prompts.</i>
           </p>
           <div class="d-flex">
             <span class="badge text-bg-dark me-1">#deno</span>
@@ -151,7 +175,7 @@
            Deno Minigame
           </h1>
           <p class="col-md-8 fs-4">
-            A Deno / Hono backend with Websocket and a frontend using a canvas.
+            A Deno / Hono backend with Websocket and a frontend using canvas.
             The backend returns values to display using the canvas and the user can only send a keypress event to the backend.
             Learning websocket and canvas with SSR in mind.
           </p>
@@ -175,7 +199,7 @@
            Pixel-it
           </h1>
           <p class="col-md-8 fs-4">
-            A Deno Web Based Application to pixelate your images.
+            A Deno Web Based Application to pixelate your image and returns the color palette.
           </p>
           <div class="d-flex">
             <span class="badge text-bg-dark me-1">#deno</span>
@@ -206,6 +230,7 @@
           <div class="d-flex">
             <span class="badge text-bg-dark me-1">#deno</span>
             <span class="badge text-bg-dark me-1">#logger</span>
+            <span class="badge text-bg-dark me-1">#customization</span>
           </div>
           <div class="d-flex flex-row-reverse">
               <a href="https://github.com/studiowebux/deno-minilog" target="_blank"><i class="me-3 fs-1 text-dark fa fa-solid fa-github"></i></a>
@@ -217,14 +242,15 @@
       <div class="p-4 mb-3 bg-light rounded-3">
         <div class="container-fluid py-5">
           <h1 class="display-5 fw-bold">
-            Custom NAMI Fork to work with private network
+            Custom NAMI Fork to work with cardano private network
           </h1>
           <p class="col-md-8 fs-4">
-            Fork of Nami Wallet to enabled connecting to private cardano cluster.
+            Fork of Nami Wallet to enable connecting to private cardano cluster.
           </p>
           <div class="d-flex">
             <span class="badge text-bg-dark me-1">#cardano</span>
             <span class="badge text-bg-dark me-1">#wallet</span>
+            <span class="badge text-bg-dark me-1">#private</span>
           </div>
           <div class="d-flex flex-row-reverse">
             <a href="https://github.com/studiowebux/nami" target="_blank"><i class="me-3 fs-1 text-dark fa fa-solid fa-github"></i></a>
@@ -258,7 +284,7 @@
             Unity X Cardano
           </h1>
           <p class="col-md-8 fs-4">
-            POC to integrate a third party wallet connector (Weld) with Unity (the game engine), making possible to sign transaction when using WebGL.
+            POC to integrate a third party wallet connector (Weld by Anvil) with Unity (the game engine), making possible to sign transaction when using WebGL, directly in your game.
           </p>
           <div class="d-flex">
             <span class="badge text-bg-dark me-1">#unity</span>
@@ -325,7 +351,7 @@
             Cardano Vault
           </h1>
           <p class="col-md-8 fs-4">
-            POC using PGP to create a vault for custodian Cardano Wallets
+            POC using PGP to create a vault for custodial Cardano Wallets
           </p>
           <div class="d-flex">
             <span class="badge text-bg-dark me-1">#deno</span>
@@ -333,6 +359,7 @@
             <span class="badge text-bg-dark me-1">#vault</span>
             <span class="badge text-bg-dark me-1">#wallet</span>
             <span class="badge text-bg-dark me-1">#PGP</span>
+            <span class="badge text-bg-dark me-1">#custodial</span>
           </div>
           <div class="d-flex flex-row-reverse">
             <a href="https://github.com/studiowebux/cardano-vault" target="_blank"><i class="me-3 fs-1 text-dark fa fa-solid fa-github"></i></a>
@@ -362,10 +389,10 @@
       <div class="p-4 mb-3 text-white bg-dark rounded-3">
         <div class="container-fluid py-5">
           <h1 class="display-5 fw-bold">
-            Star Citizen - Warbond notifier
+            Star Citizen - Warbond notifier (Star Notifier)
           </h1>
           <p class="col-md-8 fs-4">
-            Subscribe and receive emails notifications
+            Subscribe and receive emails notifications, crawl and show daily CCUs and warbond deals
           </p>
           <div class="d-flex">
             <span class="badge text-bg-light me-1">#nodejs</span>
@@ -377,7 +404,7 @@
             <span class="badge text-bg-light me-1">#mongoDB</span>
           </div>
           <div class="d-flex flex-row-reverse">
-            <a href="https://starcitizen.1minuteperday.com" target="_blank"><i class="me-3 fs-1 text-light fa fa-solid fa-earth"></i></a>
+            <a href="https://starnotifier.com" target="_blank"><i class="me-3 fs-1 text-light fa fa-solid fa-earth"></i></a>
           </div>
         </div>
       </div>
@@ -647,7 +674,7 @@
         <div class="container-fluid py-5">
           <h1 class="display-5 fw-bold">Directory Scanner</h1>
           <p class="col-md-8 fs-4">
-            NodeJS utility to scan and extract the file and diretories into a
+            NodeJS utility to scan and extract the file and directories into an
             `hiearachy.json`
           </p>
           <div class="d-flex">
